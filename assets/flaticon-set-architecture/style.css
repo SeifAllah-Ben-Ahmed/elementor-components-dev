@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "FlaticonArchitecture";
+  src: url("fonts/flaticon-set-architecture.eot");
+  src: url("fonts/flaticon-set-architecture.eot?#iefix") format("embedded-opentype"), url("fonts/flaticon-set-architecture.woff2") format("woff2"), url("fonts/flaticon-set-architecture.woff") format("woff"), url("fonts/flaticon-set-architecture.ttf") format("truetype"),
+    url("fonts/flaticon-set-architecture.svg#FlaticonArchitecture") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "FlaticonArchitecture";
+    src: url("fonts/flaticon-set-architecture.svg#FlaticonArchitecture") format("svg");
+  }
+}
+
+[class^="flaticon-set-architecture-"]:before,
+[class*=" flaticon-set-architecture-"]:before,
+[class^="flaticon-set-architecture-"]:after,
+[class*=" flaticon-set-architecture-"]:after {
+  font-family: "FlaticonArchitecture";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.flaticon-set-architecture-sketch:before {
+  content: "\f101";
+}
+.flaticon-set-architecture-architecture:before {
+  content: "\f102";
+}
+.flaticon-set-architecture-architectural:before {
+  content: "\f103";
+}
+.flaticon-set-architecture-design:before {
+  content: "\f104";
+}
+.flaticon-set-architecture-house-plan:before {
+  content: "\f105";
+}
+.flaticon-set-architecture-blueprint:before {
+  content: "\f106";
+}
+.flaticon-set-architecture-designing:before {
+  content: "\f107";
+}
+.flaticon-set-architecture-plan:before {
+  content: "\f108";
+}
+.flaticon-set-architecture-drawing:before {
+  content: "\f109";
+}
+.flaticon-set-architecture-specification:before {
+  content: "\f10a";
+}
+.flaticon-set-architecture-architecture-1:before {
+  content: "\f10b";
+}
+.flaticon-set-architecture-office-building:before {
+  content: "\f10c";
+}
+.flaticon-set-architecture-building:before {
+  content: "\f10d";
+}
+.flaticon-set-architecture-sofa:before {
+  content: "\f10e";
+}
+.flaticon-set-architecture-room:before {
+  content: "\f10f";
+}
+.flaticon-set-architecture-sink:before {
+  content: "\f110";
+}
+.flaticon-set-architecture-roller-brush:before {
+  content: "\f111";
+}
+.flaticon-set-architecture-color-palete:before {
+  content: "\f112";
+}
+.flaticon-set-architecture-architec:before {
+  content: "\f113";
+}
+.flaticon-set-architecture-architectural-plan:before {
+  content: "\f114";
+}
+.flaticon-set-architecture-technical-drawing:before {
+  content: "\f115";
+}
+.flaticon-set-architecture-building-1:before {
+  content: "\f116";
+}
+.flaticon-set-architecture-drafting-tools:before {
+  content: "\f117";
+}
+.flaticon-set-architecture-blueprint-1:before {
+  content: "\f118";
+}
+.flaticon-set-architecture-design-tools:before {
+  content: "\f119";
+}
+.flaticon-set-architecture-compass:before {
+  content: "\f11a";
+}
+.flaticon-set-architecture-layer:before {
+  content: "\f11b";
+}
+.flaticon-set-architecture-curve:before {
+  content: "\f11c";
+}
+.flaticon-set-architecture-graphic-design:before {
+  content: "\f11d";
+}
+.flaticon-set-architecture-pantone:before {
+  content: "\f11e";
+}
+.flaticon-set-architecture-process:before {
+  content: "\f11f";
+}
+.flaticon-set-architecture-creative-tools:before {
+  content: "\f120";
+}
+.flaticon-set-architecture-design-1:before {
+  content: "\f121";
+}
+.flaticon-set-architecture-pen-tool:before {
+  content: "\f122";
+}
+.flaticon-set-architecture-tools:before {
+  content: "\f123";
+}

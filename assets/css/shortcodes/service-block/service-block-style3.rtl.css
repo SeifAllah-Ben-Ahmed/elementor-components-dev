@@ -1,0 +1,82 @@
+.tm-sc-service .icon {
+  display: inline-block;
+}
+.tm-sc-service .icon,
+.tm-sc-service .feature-title,
+.tm-sc-service .feature-details {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.service-margin-top .service-item:nth-child(odd) .service-block-style3 {
+  margin-top: 60px;
+}
+@media (max-width: 1399.98px) {
+  .service-margin-top .service-item:nth-child(odd) .service-block-style3 {
+    margin-top: 0px;
+  }
+}
+
+.service-margin-bottom .service-item:nth-child(odd) .service-block-style3 .image {
+  margin-bottom: -40px;
+}
+@media (max-width: 1399.98px) {
+  .service-margin-bottom .service-item:nth-child(odd) .service-block-style3 .image {
+    margin-bottom: 0px;
+  }
+}
+
+.service-block-style3 {
+  margin-bottom: 32px;
+}
+.service-block-style3 .inner-box {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.service-block-style3 .inner-box:hover {
+  background-color: var(--theme-color2);
+}
+.service-block-style3 .inner-box:hover .image img {
+  transform: scale(1.1);
+}
+.service-block-style3 .inner-box:hover .content-box .service-title {
+  color: #fff;
+}
+.service-block-style3 .inner-box .image {
+  transition: all 0.3s ease;
+}
+.service-block-style3 .inner-box .image::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 60%;
+  width: 100%;
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #1d1d29 100%);
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.service-block-style3 .inner-box .image img {
+  transition: all 0.3s ease;
+}
+.service-block-style3 .inner-box .content-box {
+  position: absolute;
+  bottom: 30px;
+  right: 35px;
+  z-index: 2;
+}
+.service-block-style3 .inner-box .content-box .service-count {
+  line-height: 1;
+  font-size: 96px;
+  color: #fff;
+  transition: all 500ms ease;
+  margin-bottom: 15px;
+}
+.service-block-style3 .inner-box .content-box .service-title {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 5px;
+}

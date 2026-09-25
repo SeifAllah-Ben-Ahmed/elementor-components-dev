@@ -1,0 +1,135 @@
+@font-face { font-family: "Montserrat"; src: url("../fonts/montserrat/Montserrat[wght].ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow/Barlow-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow/Barlow-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow/Barlow-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow/Barlow-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow/Barlow-ExtraBold.ttf") format("truetype"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow/Barlow-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* Interiox design tokens (default skin: theme-skin-color-set1), scoped to the Seif widgets. */
+.elementor-widget-seif-service-block,
+.elementor-widget-seif-funfact-counter,
+.elementor-widget-seif-lists {
+  --theme-color1: #aa8453;
+  --theme-color1-rgb: 170, 132, 83;
+  --theme-color1-lighter: #bd9f78;
+  --theme-color1-darker: #846741;
+  --theme-color2: #272727;
+  --theme-color2-rgb: 39, 39, 39;
+  --theme-color2-lighter: #434343;
+  --theme-color2-darker: #0b0b0b;
+  --theme-color3: #323232;
+  --theme-color3-rgb: 50, 50, 50;
+  --theme-color3-lighter: #4e4e4e;
+  --theme-color3-darker: #161616;
+  --theme-color4: #c6974c;
+  --theme-color4-rgb: 198, 151, 76;
+  --theme-color4-lighter: #d4b077;
+  --theme-color4-darker: #a57a35;
+  --theme-color-white: #ffffff;
+  --theme-color-light: #f8f5f0;
+  --theme-color-gray: #f6f6f6;
+  --gradient-1: linear-gradient(to right, rgba(var(--theme-color1-rgb), 1) 0%, rgba(var(--theme-color4-rgb), 1) 100%);
+  --gradient-2: linear-gradient(to left, rgba(var(--theme-color1-rgb), 1) 0%, rgba(var(--theme-color4-rgb), 1) 100%);
+  --gradient-3: linear-gradient(-135deg, rgba(23, 23, 23, 0) 50%, var(--theme-color1) 100%);
+  --text-color-bg-theme-color1: #fff;
+  --text-color-bg-theme-color2: #fff;
+  --text-color-bg-theme-color3: #fff;
+  --text-color-bg-theme-color4: #fff;
+  --hover-theme-color: #aa8453;
+  --body-font-family: "Barlow", Arial, sans-serif;
+  --heading-font-family: "Montserrat", Arial, sans-serif;
+  --font-current-theme3: "Barlow", Arial, sans-serif;
+  --body-font-size: 1rem;
+  --body-font-weight: 400;
+  --body-font-bold: bold;
+  --text-color: #777777;
+  --link-color: #272e39;
+  --link-hover-color: #aa8453;
+  --headings-color: #272727;
+  --h1-font-size: 4.5rem;
+  --h1-font-size-mob: 2.5rem;
+  --h2-font-size: 2.875rem;
+  --h2-font-size-mob: 2.5rem;
+  --h3-font-size: 2rem;
+  --h4-font-size: 1.5rem;
+  --h5-font-size: 1.125rem;
+  --h6-font-size: 0.875rem;
+  --headings-font-weight-h1: 600;
+  --headings-font-weight-h2: 500;
+  --headings-font-weight-h3: 500;
+  --headings-font-weight-h4: 500;
+  --headings-font-weight-h5: 500;
+  --headings-font-weight-h6: 500;
+  --section-title-subtitle-line-height: 1.4;
+  --btn-font-size: 14px;
+  --transition: all 300ms ease;
+  line-height: 1.9;
+  color: var(--text-color);
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  word-wrap: break-word;
+}
+
+/* Interiox base typography. :where() keeps the original element-level specificity. */
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) * { box-sizing: border-box; }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) img { max-width: 100%; height: auto; }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+  font-family: var(--heading-font-family);
+  color: var(--headings-color);
+  margin-bottom: 1rem;
+  margin-top: 0.75rem;
+  letter-spacing: -0.64px;
+}
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) a { color: inherit; font-weight: inherit; }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, h2, h3, .h1, .h2, .h3) { line-height: 1.3; }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h4, h5, h6, .h4, .h5, .h6) { line-height: var(--section-title-subtitle-line-height); }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, .h1) { font-size: var(--h1-font-size); font-weight: var(--headings-font-weight-h1); }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h2, .h2) { font-size: var(--h2-font-size); font-weight: var(--headings-font-weight-h2); }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h3, .h3) { font-size: var(--h3-font-size); font-weight: var(--headings-font-weight-h3); }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h4, .h4) { font-size: var(--h4-font-size); font-weight: var(--headings-font-weight-h4); }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h5, .h5) { font-size: var(--h5-font-size); font-weight: var(--headings-font-weight-h5); }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h6, .h6) { font-size: var(--h6-font-size); font-weight: var(--headings-font-weight-h6); }
+@media (max-width: 767.98px) {
+  :where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h2, .h2) { font-size: var(--h2-font-size-mob); }
+}
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) p { margin-top: 0; margin-bottom: 20px; }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: var(--body-font-weight);
+  transition: all 0.3s ease;
+}
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) a:is(:hover, :focus) { color: var(--hover-theme-color); text-decoration: none; }
+:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(b, strong) { color: #333; font-weight: var(--body-font-bold); }
+
+/* WOW / split-text reveal (replaces the theme's WOW.js and GSAP split-text init). */
+.elementor-widget-seif-service-block .wow { visibility: hidden; }
+.elementor-widget-seif-service-block .wow.animated { visibility: visible; }
+.elementor-widget-seif-service-block .tm-split-text { opacity: 0; transition: opacity .65s ease, transform .65s ease; }
+.elementor-widget-seif-service-block .tm-split-text.split-in-right { transform: translateX(30px); }
+.elementor-widget-seif-service-block .tm-split-text.split-in-left { transform: translateX(-30px); }
+.elementor-widget-seif-service-block .tm-split-text.split-in-up { transform: translateY(30px); }
+.elementor-widget-seif-service-block .tm-split-text.split-in-down { transform: translateY(-30px); }
+.elementor-widget-seif-service-block .tm-split-text.split-in-rotate { transform: rotate(5deg); }
+.elementor-widget-seif-service-block .tm-split-text.split-in-scale { transform: scale(.9); }
+.elementor-widget-seif-service-block .tm-split-text.seif-split-visible { opacity: 1; transform: none; }
+.elementor-editor-active .elementor-widget-seif-service-block .wow,
+.elementor-editor-active .elementor-widget-seif-service-block .tm-split-text { visibility: visible; opacity: 1; transform: none; }
+
+/* Cursor floating info (replaces Mascot Core's mouse-helper plugin). */
+.seif-floating-info-holder { position: fixed; z-index: 9999; pointer-events: none; clip-path: inset(0 100% 0 0); transition: clip-path .4s ease; }
+.seif-floating-info-holder .seif-floating-info-inner { display: inline-block; background: #000; padding: 16px 24px 18px; }
+.seif-floating-info-holder .floating-title { font: 600 20px/1.3 "Montserrat", Arial, sans-serif; color: #fff; white-space: nowrap; }
+.seif-floating-info-holder .floating-subtitle { font: 500 12px/1.3 "Montserrat", Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; color: #fff; white-space: nowrap; }
+.seif-floating-info-holder.floating-info-right { transform: translateX(-100%); text-align: right; }
+.seif-floating-info-holder.floating-info-active { clip-path: inset(0 0 0 0); }
+@media (max-width: 991px) {
+  .seif-floating-info-holder { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elementor-widget-seif-service-block .wow,
+  .elementor-widget-seif-service-block .tm-split-text { visibility: visible; opacity: 1; transform: none; animation: none !important; transition: none !important; }
+}

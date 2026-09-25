@@ -1,0 +1,79 @@
+.tm-sc-service .icon {
+  display: inline-block;
+}
+.tm-sc-service .icon,
+.tm-sc-service .feature-title,
+.tm-sc-service .feature-details {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.service-block-style9 .service-item {
+  text-align: center;
+  padding: 50px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1019607843);
+  transition: all 300ms ease;
+}
+body.tm-dark-layout .service-block-style9 .service-item {
+  border-color: rgba(255, 255, 255, 0.1019607843);
+}
+.service-block-style9 .service-item .service-icon {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border-radius: 50%;
+  transition: var(--transition);
+  border-radius: 0;
+  margin: 30px auto;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 45px;
+  transition: all 300ms ease;
+  background-color: var(--theme-color-light);
+  color: var(--theme-color1);
+  transition: all 300ms ease;
+}
+.service-block-style9 .service-item .service-icon svg {
+  transition: 0.9s;
+}
+.service-block-style9 .service-item .service-details {
+  max-width: 340px;
+  margin: 20px;
+}
+.service-block-style9 .service-item .btn-more {
+  color: var(--headings-color);
+  margin-top: 20px;
+}
+.service-block-style9 .service-item .btn-more i {
+  margin-left: 10px;
+}
+.service-block-style9 .service-item:hover {
+  border: 1px solid transparent;
+  background-color: var(--theme-color2);
+}
+body.tm-dark-layout .service-block-style9 .service-item:hover {
+  background-color: #323232;
+}
+.service-block-style9 .service-item:hover .service-icon {
+  background-color: var(--theme-color1);
+  color: #fff;
+}
+.service-block-style9 .service-item:hover .service-icon svg {
+  transform: rotateY(-360deg);
+}
+.service-block-style9 .service-item:hover .service-title {
+  color: white;
+}
+.service-block-style9 .service-item:hover .service-details {
+  color: #fff;
+}
+.service-block-style9 .service-item:hover .btn-more {
+  color: #fff;
+}
+.service-block-style9 .service-item:hover .btn-more i {
+  color: #fff;
+}
