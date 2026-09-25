@@ -40,13 +40,15 @@ function seif_component_register_assets() {
 	foreach ( array( 'style1', 'style2', 'style3', 'style4', 'style5', 'style6', 'style7', 'style8', 'style9', 'style10', 'creative1', 'cursor-floating-info' ) as $style ) {
 		wp_register_style( 'seif-service-' . $style, $css . 'shortcodes/service-block/service-block-' . $style . $rtl . '.css', array( 'seif-service-loader' ), SEIF_COMPONENT_VERSION );
 	}
+	wp_register_style( 'seif-floating-info', $css . 'floating-info' . $rtl . '.css', array(), SEIF_COMPONENT_VERSION );
 	wp_register_style( 'seif-funfacts-style', $css . 'widgets-core/funfacts' . $rtl . '.css', array( 'seif-base', 'seif-fontawesome', 'seif-architecture-icons' ), SEIF_COMPONENT_VERSION );
 	wp_register_style( 'seif-list-style', $css . 'widgets-core/list' . $rtl . '.css', array( 'seif-base', 'seif-fontawesome' ), SEIF_COMPONENT_VERSION );
 
 	wp_register_script( 'seif-swiper', $js . 'plugins/swiper/swiper.min.js', array(), SEIF_COMPONENT_VERSION, true );
 	wp_register_script( 'seif-isotope', $js . 'plugins/isotope.pkgd.min.js', array( 'jquery' ), SEIF_COMPONENT_VERSION, true );
 	wp_register_script( 'seif-animatenumbers', $js . 'plugins/jquery.animatenumbers.min.js', array( 'jquery' ), SEIF_COMPONENT_VERSION, true );
-	wp_register_script( 'seif-frontend', $js . 'frontend.js', array( 'jquery', 'elementor-frontend' ), SEIF_COMPONENT_VERSION, true );
+	wp_register_script( 'seif-wow', $js . 'plugins/wow.min.js', array(), SEIF_COMPONENT_VERSION, true );
+	wp_register_script( 'seif-frontend', $js . 'frontend.js', array( 'jquery', 'elementor-frontend', 'seif-wow' ), SEIF_COMPONENT_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'seif_component_register_assets' );
 add_action( 'elementor/editor/before_enqueue_scripts', 'seif_component_register_assets' );

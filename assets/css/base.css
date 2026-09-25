@@ -103,33 +103,3 @@
 }
 :where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) a:is(:hover, :focus) { color: var(--hover-theme-color); text-decoration: none; }
 :where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(b, strong) { color: #333; font-weight: var(--body-font-bold); }
-
-/* WOW / split-text reveal (replaces the theme's WOW.js and GSAP split-text init). */
-.elementor-widget-seif-service-block .wow { visibility: hidden; }
-.elementor-widget-seif-service-block .wow.animated { visibility: visible; }
-.elementor-widget-seif-service-block .tm-split-text { opacity: 0; transition: opacity .65s ease, transform .65s ease; }
-.elementor-widget-seif-service-block .tm-split-text.split-in-right { transform: translateX(30px); }
-.elementor-widget-seif-service-block .tm-split-text.split-in-left { transform: translateX(-30px); }
-.elementor-widget-seif-service-block .tm-split-text.split-in-up { transform: translateY(30px); }
-.elementor-widget-seif-service-block .tm-split-text.split-in-down { transform: translateY(-30px); }
-.elementor-widget-seif-service-block .tm-split-text.split-in-rotate { transform: rotate(5deg); }
-.elementor-widget-seif-service-block .tm-split-text.split-in-scale { transform: scale(.9); }
-.elementor-widget-seif-service-block .tm-split-text.seif-split-visible { opacity: 1; transform: none; }
-.elementor-editor-active .elementor-widget-seif-service-block .wow,
-.elementor-editor-active .elementor-widget-seif-service-block .tm-split-text { visibility: visible; opacity: 1; transform: none; }
-
-/* Cursor floating info (replaces Mascot Core's mouse-helper plugin). */
-.seif-floating-info-holder { position: fixed; z-index: 9999; pointer-events: none; clip-path: inset(0 100% 0 0); transition: clip-path .4s ease; }
-.seif-floating-info-holder .seif-floating-info-inner { display: inline-block; background: #000; padding: 16px 24px 18px; }
-.seif-floating-info-holder .floating-title { font: 600 20px/1.3 "Montserrat", Arial, sans-serif; color: #fff; white-space: nowrap; }
-.seif-floating-info-holder .floating-subtitle { font: 500 12px/1.3 "Montserrat", Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; color: #fff; white-space: nowrap; }
-.seif-floating-info-holder.floating-info-right { transform: translateX(-100%); text-align: right; }
-.seif-floating-info-holder.floating-info-active { clip-path: inset(0 0 0 0); }
-@media (max-width: 991px) {
-  .seif-floating-info-holder { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .elementor-widget-seif-service-block .wow,
-  .elementor-widget-seif-service-block .tm-split-text { visibility: visible; opacity: 1; transform: none; animation: none !important; transition: none !important; }
-}

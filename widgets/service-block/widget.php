@@ -97,7 +97,7 @@ class TM_Elementor_ServiceBlock extends Widget_Base {
 		return array( 'seif-service-style1', 'seif-service-style2', 'seif-service-style3',
 			'seif-service-style4', 'seif-service-style5', 'seif-service-style6',
 			'seif-service-style7', 'seif-service-style8', 'seif-service-style9',
-			'seif-service-style10', 'seif-service-creative1', 'seif-service-cursor-floating-info' );
+			'seif-service-style10', 'seif-service-creative1', 'seif-service-cursor-floating-info', 'seif-floating-info' );
 	}
 
 

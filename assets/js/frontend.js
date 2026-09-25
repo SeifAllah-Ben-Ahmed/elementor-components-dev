@@ -4,26 +4,12 @@
   function bool(value) { return value === true || value === 'true' || value === 'yes'; }
   function number(value, fallback) { var result = Number(value); return Number.isFinite(result) ? result : fallback; }
 
-  function animateIn(scope) {
-    var items = scope.querySelectorAll('.wow, .tm-split-text');
-    if (!items.length) { return; }
-    var reveal = function (element) {
-      if (element.dataset.seifRevealed) { return; }
-      element.dataset.seifRevealed = '1';
-      element.style.animationDelay = element.getAttribute('data-wow-delay') || '0ms';
-      element.classList.add('animated');
-      element.classList.add('seif-split-visible');
-    };
-    if (!('IntersectionObserver' in window)) {
-      items.forEach(reveal);
-      return;
-    }
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { reveal(entry.target); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1 });
-    items.forEach(function (item) { observer.observe(item); });
+  // Theme: THEMEMASCOT.initialize.TM_wow -> new WOW({ mobile: false }).init().
+  var wowStarted = false;
+  function initWow() {
+    if (wowStarted || typeof window.WOW !== 'function') { return; }
+    wowStarted = true;
+    new window.WOW({ mobile: false }).init();
   }
 
   function initCounters(scope) {
@@ -31,21 +17,21 @@
     var start = function (item) {
       if (item.dataset.seifAnimated) { return; }
       item.dataset.seifAnimated = '1';
-      var value = number(item.getAttribute('data-value'), 0);
-      var duration = number(item.getAttribute('data-animation-duration'), 1500);
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { duration = 0; }
-      if ($.fn.animateNumbers && duration > 0) {
-        $(item).animateNumbers(value, true, duration);
-      } else {
-        item.textContent = value.toLocaleString();
-      }
+      var delay = Math.floor(Math.random() * (400 - 10) + 10);
+      setTimeout(function () {
+        if ($.fn.animateNumbers) {
+          $(item).animateNumbers(item.getAttribute('data-value'), true, parseInt(item.getAttribute('data-animation-duration'), 10)).addClass('appeared');
+        } else {
+          item.textContent = item.getAttribute('data-value');
+        }
+      }, delay);
     };
     if (!('IntersectionObserver' in window)) { items.forEach(start); return; }
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) { start(entry.target); observer.unobserve(entry.target); }
       });
-    }, { threshold: 0.25 });
+    });
     items.forEach(function (item) { observer.observe(item); });
   }
 
@@ -63,7 +49,7 @@
         centeredSlides: bool(data.centered),
         speed: number(data.speed, 300),
         freeMode: bool(data.freemod),
-        autoplay: bool(data.autoplay) ? { delay: number(data.delay, 3000), reverseDirection: bool(data.reversedir) } : false,
+        autoplay: { delay: number(data.delay, 3000), reverseDirection: bool(data.reversedir) },
         navigation: { nextEl: container.querySelector('.tm-swiper-button-next'), prevEl: container.querySelector('.tm-swiper-button-prev') },
         pagination: {
           el: container.querySelector('.swiper-pagination'),
@@ -113,8 +99,8 @@
     scope.querySelectorAll('.service-block-style1 .inner-box').forEach(function (item) {
       if (item.dataset.seifBound) { return; }
       item.dataset.seifBound = '1';
-      $(item).on('mouseenter', function () { $(item).find('.content-box .inner').stop(true, true).slideDown(400); });
-      $(item).on('mouseleave', function () { $(item).find('.content-box .inner').stop(true, true).slideUp(400); });
+      $(item).on('mouseenter', function () { $(item).find('.content-box .inner').stop().slideDown(400); });
+      $(item).on('mouseleave', function () { $(item).find('.content-box .inner').stop().slideUp(400); });
     });
     ['style4', 'style10'].forEach(function (style) {
       scope.querySelectorAll('.tm-sc-service').forEach(function (block) {
@@ -151,29 +137,33 @@
         item.addEventListener('focusin', activate);
       });
     });
-    scope.querySelectorAll('.tm-has-mouse-follow-floating-info').forEach(function (block) {
-      if (block.dataset.seifFloatingBound) { return; }
-      block.dataset.seifFloatingBound = '1';
-      var holder = document.createElement('div');
-      holder.className = 'seif-floating-info-holder';
-      holder.innerHTML = '<div class="seif-floating-info-inner"><div class="floating-subtitle"></div><div class="floating-title"></div></div>';
-      document.body.appendChild(holder);
-      block.querySelectorAll('.tm-floating-info-item').forEach(function (item) {
-        item.addEventListener('mousemove', function (event) {
-          holder.style.top = (event.clientY + 20) + 'px';
-          holder.style.left = (event.clientX + 20) + 'px';
-          holder.classList.toggle('floating-info-right', event.clientX + holder.offsetWidth + 20 > window.innerWidth);
-        });
-        item.addEventListener('mouseenter', function () {
-          var title = item.querySelector('.floating-title');
-          var subtitle = item.querySelector('.floating-subtitle');
-          holder.querySelector('.floating-title').textContent = title ? title.textContent : '';
-          holder.querySelector('.floating-subtitle').textContent = subtitle ? subtitle.textContent : '';
-          holder.classList.add('floating-info-active');
-        });
-        item.addEventListener('mouseleave', function () { holder.classList.remove('floating-info-active'); });
+    // Theme: THEMEMASCOT.hot.TM_Mouse_Follow_Show_Floating_Info.
+    var blocks = scope.querySelectorAll('.tm-has-mouse-follow-floating-info');
+    if (blocks.length) {
+      var $holder = $('.tm-mouse-follow-floating-info-holder');
+      if (!$holder.length) {
+        $holder = $('<div class="tm-mouse-follow-floating-info-holder"><div class="mouse-follow-floating-info-inner"><div class="floating-subtitle"></div><div class="floating-title"></div></div></div>').appendTo(document.body);
+      }
+      var $floatingSubtitle = $holder.find('.floating-subtitle'),
+        $floatingTitle = $holder.find('.floating-title');
+      $(blocks).find('.tm-floating-info-item').each(function () {
+        if (this.dataset.seifFloatingBound) { return; }
+        this.dataset.seifFloatingBound = '1';
+        $(this)
+          .on('mousemove', function (e) {
+            $holder.toggleClass('floating-info-right', e.clientX + 20 + $holder.width() > $(window).width());
+            $holder.css({ top: e.clientY + 20, left: e.clientX + 20 });
+          })
+          .on('mouseenter', function () {
+            var $title = $(this).find('.floating-title'),
+              $subtitle = $(this).find('.floating-subtitle');
+            if ($title.length) { $floatingTitle.html($title.text()); }
+            if ($subtitle.length) { $floatingSubtitle.html($subtitle.text()); }
+            $holder.addClass('floating-info-active');
+          })
+          .on('mouseleave', function () { $holder.removeClass('floating-info-active'); });
       });
-    });
+    }
   }
 
   function initService(scope) {
@@ -182,7 +172,7 @@
     initCarousel(root);
     initIsotope(root);
     initServiceInteractions(root);
-    animateIn(root);
+    initWow();
   }
   function initFunfact(scope) { initCounters(scope.jquery ? scope[0] : scope); }
 
