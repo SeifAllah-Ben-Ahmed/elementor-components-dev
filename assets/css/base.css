@@ -9,7 +9,8 @@
 /* Interiox design tokens (default skin: theme-skin-color-set1), scoped to the Seif widgets. */
 .elementor-widget-seif-service-block,
 .elementor-widget-seif-funfact-counter,
-.elementor-widget-seif-lists {
+.elementor-widget-seif-lists,
+.elementor-widget-seif-iconbox {
   --theme-color1: #aa8453;
   --theme-color1-rgb: 170, 132, 83;
   --theme-color1-lighter: #bd9f78;
