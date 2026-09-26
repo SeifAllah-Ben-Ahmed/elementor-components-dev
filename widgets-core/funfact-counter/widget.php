@@ -91,7 +91,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'seif-animatenumbers', 'seif-frontend' ];
+		return [ 'seif-appear', 'seif-animatenumbers', 'seif-funfact-animate-number' ];
 	}
 
 	public function get_style_depends() {
@@ -1583,7 +1583,8 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 		$settings['title_classes'] = $title_classes;
 
 
-		wp_enqueue_script( 'seif-frontend' );
+		wp_enqueue_script( 'seif-animatenumbers' );
+		wp_enqueue_script( 'seif-funfact-animate-number' );
 		$settings['settings'] = $settings;
 
 		//Produce HTML version by using the parameters (filename, variation, folder name, parameters, shortcode_ob_start)

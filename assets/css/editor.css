@@ -1,0 +1,6 @@
+.tm-elementor-widget-icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../images/admin-menu/dashicons-mascot.png) !important;
+}

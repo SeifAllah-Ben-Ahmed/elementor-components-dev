@@ -220,7 +220,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-
+		wp_enqueue_style( 'seif-service-style1' );
 
 
 		if( $settings['animate_icon_on_hover'] ) {
@@ -245,7 +245,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 
 		$settings['holder_id'] = seif_component_get_isotope_holder_ID('service-block');
 
-
+		wp_enqueue_script( 'seif-service-block' );
 		$settings['settings'] = $settings;
 
 		//Produce HTML version by using the parameters (filename, variation, folder name, parameters, shortcode_ob_start)

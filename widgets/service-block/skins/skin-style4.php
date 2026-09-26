@@ -220,9 +220,9 @@ class Skin_Style4 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-
-
-
+		wp_enqueue_style( 'seif-service-style4' );
+		wp_enqueue_script( 'seif-service-block-bg-image' );
+		wp_enqueue_script( 'seif-service-block-item4-active' );
 
 
 		if( $settings['animate_icon_on_hover'] ) {

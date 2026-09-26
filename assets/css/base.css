@@ -64,42 +64,12 @@
   --section-title-subtitle-line-height: 1.4;
   --btn-font-size: 14px;
   --transition: all 300ms ease;
+  --bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   line-height: 1.9;
   color: var(--text-color);
   font-size: var(--body-font-size);
   font-family: var(--body-font-family);
   font-weight: var(--body-font-weight);
+  -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
-
-/* Interiox base typography. :where() keeps the original element-level specificity. */
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) * { box-sizing: border-box; }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) img { max-width: 100%; height: auto; }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
-  font-family: var(--heading-font-family);
-  color: var(--headings-color);
-  margin-bottom: 1rem;
-  margin-top: 0.75rem;
-  letter-spacing: -0.64px;
-}
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) a { color: inherit; font-weight: inherit; }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, h2, h3, .h1, .h2, .h3) { line-height: 1.3; }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h4, h5, h6, .h4, .h5, .h6) { line-height: var(--section-title-subtitle-line-height); }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h1, .h1) { font-size: var(--h1-font-size); font-weight: var(--headings-font-weight-h1); }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h2, .h2) { font-size: var(--h2-font-size); font-weight: var(--headings-font-weight-h2); }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h3, .h3) { font-size: var(--h3-font-size); font-weight: var(--headings-font-weight-h3); }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h4, .h4) { font-size: var(--h4-font-size); font-weight: var(--headings-font-weight-h4); }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h5, .h5) { font-size: var(--h5-font-size); font-weight: var(--headings-font-weight-h5); }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h6, .h6) { font-size: var(--h6-font-size); font-weight: var(--headings-font-weight-h6); }
-@media (max-width: 767.98px) {
-  :where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(h2, .h2) { font-size: var(--h2-font-size-mob); }
-}
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) p { margin-top: 0; margin-bottom: 20px; }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: var(--body-font-weight);
-  transition: all 0.3s ease;
-}
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) a:is(:hover, :focus) { color: var(--hover-theme-color); text-decoration: none; }
-:where(.elementor-widget-seif-service-block, .elementor-widget-seif-funfact-counter, .elementor-widget-seif-lists) :is(b, strong) { color: #333; font-weight: var(--body-font-bold); }

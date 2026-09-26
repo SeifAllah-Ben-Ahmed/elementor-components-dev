@@ -18,7 +18,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class TM_Elementor_ServiceBlock extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
-		// Styles are declared through get_style_depends() and loaded with the widget.
+		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+			seif_component_register_assets();
+			wp_enqueue_style( 'seif-service-loader' );
+		}
 	}
 
 	/**
@@ -44,7 +47,7 @@ class TM_Elementor_ServiceBlock extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Services Block', 'seifhub-elementor-components' );
+		return esc_html__( 'Service Block', 'seifhub-elementor-components' );
 	}
 
 	/**
@@ -90,14 +93,16 @@ class TM_Elementor_ServiceBlock extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'seif-swiper', 'seif-isotope', 'seif-frontend' ];
+		return [ 'seif-swiper', 'seif-isotope', 'seif-frontend', 'seif-service-block', 'seif-service-block-creative1',
+			'seif-service-block-bg-image', 'seif-service-block-item4-active', 'seif-service-block10-bg-image', 'seif-service-block-item10-active' ];
 	}
 
+	/**
+	 * Shared assets only. Like the original, each skin enqueues its own CSS in render() and the
+	 * all-skins loader CSS is only loaded in the Elementor preview.
+	 */
 	public function get_style_depends() {
-		return array( 'seif-service-style1', 'seif-service-style2', 'seif-service-style3',
-			'seif-service-style4', 'seif-service-style5', 'seif-service-style6',
-			'seif-service-style7', 'seif-service-style8', 'seif-service-style9',
-			'seif-service-style10', 'seif-service-creative1', 'seif-service-cursor-floating-info', 'seif-floating-info' );
+		return array( 'seif-service-common' );
 	}
 
 

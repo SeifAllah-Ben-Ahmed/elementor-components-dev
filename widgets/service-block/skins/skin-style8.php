@@ -220,7 +220,7 @@ class Skin_Style8 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-
+		wp_enqueue_style( 'seif-service-style8' );
 
 
 		if( $settings['animate_icon_on_hover'] ) {

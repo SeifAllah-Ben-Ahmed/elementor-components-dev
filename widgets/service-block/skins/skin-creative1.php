@@ -148,9 +148,8 @@ class Skin_Creative1 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-
-
-
+		wp_enqueue_style( 'seif-service-creative1' );
+		wp_enqueue_script( 'seif-service-block-creative1' );
 
 
 		if( $settings['animate_icon_on_hover'] ) {
