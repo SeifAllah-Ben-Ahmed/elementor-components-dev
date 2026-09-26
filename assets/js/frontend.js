@@ -238,11 +238,14 @@
     }, 0);
   });
 
-  // Window load: TM_masonryIsotope after 400ms.
+  // Window load: TM_masonryIsotope after 400ms, then the theme triggers scroll + resize
+  // (jquery.appear only checks on these events, so counters already in view start here).
   $window.on('load', function () {
     setTimeout(function () {
       masonryIsotope(serviceBlocks());
     }, 400);
+    $window.trigger('scroll');
+    $window.trigger('resize');
   });
 
   // Window resize: TM_masonryIsotope after 400ms.
@@ -255,6 +258,9 @@
   // Elementor editor: widgets are re-rendered without a page load, so run the same init per widget.
   $window.on('elementor/frontend/init', function () {
     if (!window.elementorFrontend || !elementorFrontend.isEditMode()) { return; }
+    elementorFrontend.hooks.addAction('frontend/element_ready/seif-funfact-counter.default', function () {
+      setTimeout(function () { $window.trigger('scroll'); }, 0);
+    });
     elementorFrontend.hooks.addAction('frontend/element_ready/widget', function ($scope) {
       if (!$scope.hasClass('elementor-widget-seif-service-block')) { return; }
       mouseFollowShowFloatingInfo($scope);

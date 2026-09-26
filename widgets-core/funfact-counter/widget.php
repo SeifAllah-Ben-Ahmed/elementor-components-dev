@@ -91,7 +91,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'seif-appear', 'seif-animatenumbers', 'seif-funfact-animate-number' ];
+		return [ 'seif-appear', 'seif-animatenumbers', 'seif-funfact-animate-number', 'seif-frontend' ];
 	}
 
 	public function get_style_depends() {

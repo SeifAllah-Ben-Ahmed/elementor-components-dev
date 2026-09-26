@@ -27,7 +27,7 @@
 
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
-        elementorFrontend.elementsHandler.attachHandler( 'seif-funfact-counter', WidgetFunfactAnimateNumberHandler, 'default' );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/seif-funfact-counter.default', WidgetFunfactAnimateNumberHandler );
     });
 
 
