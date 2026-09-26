@@ -223,12 +223,11 @@ class Skin_Style1 extends Elementor_Skin_Base {
 		wp_enqueue_style( 'seif-service-style1' );
 
 
-		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
-		}
-
 		//classes
 		$classes = array();
+		if ( ! empty( $settings['animate_icon_on_hover'] ) ) {
+			$classes[] = 'animate-hover animate-icon-' . $settings['animate_icon_on_hover'];
+		}
 		$settings['classes'] = $classes;
 
 		//icon classes

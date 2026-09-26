@@ -3,7 +3,7 @@
  * Plugin Name: SeifHub UI Elements
  * Plugin URI: https://seifhub.com/
  * Description: Standalone Elementor widgets including custom counter and list components.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: SeifHub
  * Author URI: https://seifhub.com/
  * Requires at least: 6.5
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SEIF_COMPONENT_VERSION', '1.1.1' );
+define( 'SEIF_COMPONENT_VERSION', '1.1.2' );
 define( 'SEIF_COMPONENT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SEIF_COMPONENT_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets' );
 

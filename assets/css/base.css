@@ -37,9 +37,9 @@
   --text-color-bg-theme-color3: #fff;
   --text-color-bg-theme-color4: #fff;
   --hover-theme-color: #aa8453;
-  --body-font-family: "Barlow", Arial, sans-serif;
-  --heading-font-family: "Montserrat", Arial, sans-serif;
-  --font-current-theme3: "Barlow", Arial, sans-serif;
+  --body-font-family: "Barlow", serif;
+  --heading-font-family: "Montserrat", serif;
+  --font-current-theme3: "Barlow", serif;
   --body-font-size: 1rem;
   --body-font-weight: 400;
   --body-font-bold: bold;
@@ -73,3 +73,15 @@
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
+
+/* Service icon hover options are applied to the hovered service item. */
+.tm-sc-service.animate-hover [class*="service-block-"] .icon {
+  transition: transform 300ms ease;
+}
+.tm-sc-service.animate-icon-rotate [class*="service-block-"]:hover .icon { transform: rotate(360deg); }
+.tm-sc-service.animate-icon-rotate-x [class*="service-block-"]:hover .icon { transform: rotateX(360deg); }
+.tm-sc-service.animate-icon-rotate-y [class*="service-block-"]:hover .icon { transform: rotateY(180deg); }
+.tm-sc-service.animate-icon-translate [class*="service-block-"]:hover .icon { transform: translate(-10px, 10px); }
+.tm-sc-service.animate-icon-translate-x [class*="service-block-"]:hover .icon { transform: translateX(-10px); }
+.tm-sc-service.animate-icon-translate-y [class*="service-block-"]:hover .icon { transform: translateY(-10px); }
+.tm-sc-service.animate-icon-scale [class*="service-block-"]:hover .icon { transform: scale(1.1); }

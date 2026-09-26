@@ -489,8 +489,8 @@ class TM_Elementor_List extends Widget_Base {
 		$classes[] = 'tm-sc-list';
 		$classes[] = $settings['custom_css_class'];
 
-		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'tm-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
+		if ( ! empty( $settings['animate_icon_on_hover'] ) ) {
+			$classes[] = 'tm-animate-hover icon-' . $settings['animate_icon_on_hover'];
 		}
 
 		$settings['classes'] = $classes;

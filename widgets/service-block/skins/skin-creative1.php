@@ -152,12 +152,11 @@ class Skin_Creative1 extends Elementor_Skin_Base {
 		wp_enqueue_script( 'seif-service-block-creative1' );
 
 
-		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
-		}
-
 		//classes
 		$classes = array();
+		if ( ! empty( $settings['animate_icon_on_hover'] ) ) {
+			$classes[] = 'animate-hover animate-icon-' . $settings['animate_icon_on_hover'];
+		}
 		$settings['classes'] = $classes;
 
 		//icon classes

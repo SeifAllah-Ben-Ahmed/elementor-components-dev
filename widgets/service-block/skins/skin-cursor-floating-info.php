@@ -34,12 +34,11 @@ class Skin_Cursor_Floating_Info extends Elementor_Skin_Base {
 		wp_enqueue_style( 'seif-service-cursor-floating-info' );
 
 
-		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
-		}
-
 		//classes
 		$classes = array();
+		if ( ! empty( $settings['animate_icon_on_hover'] ) ) {
+			$classes[] = 'animate-hover animate-icon-' . $settings['animate_icon_on_hover'];
+		}
 		$classes[] = 'tm-has-mouse-follow-floating-info';
 		$settings['classes'] = $classes;
 

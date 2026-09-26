@@ -1557,8 +1557,8 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 		$classes = array();
 		$classes[] = $settings['design_style'];
 		$classes[] = $settings['custom_css_class'];
-		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'tm-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
+		if ( ! empty( $settings['animate_icon_on_hover'] ) ) {
+			$classes[] = 'tm-animate-hover icon-' . $settings['animate_icon_on_hover'];
 		}
 		if( $settings['everything_centered_in_responsive_tablet'] === 'yes' ) {
 			$classes[] = 'funfact-centered-in-responsive-tablet';
