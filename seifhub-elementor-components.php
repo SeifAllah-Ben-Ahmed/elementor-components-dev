@@ -2,8 +2,8 @@
 /**
  * Plugin Name: SeifHub UI Elements
  * Plugin URI: https://seifhub.com/
- * Description: Standalone Elementor widgets including custom counter and list components.
- * Version: 1.1.2
+ * Description: Standalone Elementor widgets including service blocks, counters, lists, and icon boxes.
+ * Version: 1.2.0
  * Author: SeifHub
  * Author URI: https://seifhub.com/
  * Requires at least: 6.5
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SEIF_COMPONENT_VERSION', '1.1.2' );
+define( 'SEIF_COMPONENT_VERSION', '1.2.0' );
 define( 'SEIF_COMPONENT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SEIF_COMPONENT_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets' );
 
@@ -48,6 +48,7 @@ function seif_component_register_assets() {
 	}
 	wp_register_style( 'seif-funfacts-style', $css . 'widgets-core/funfacts' . $rtl . '.css', array( 'seif-base', 'seif-fontawesome', 'seif-architecture-icons', 'seif-common-icons' ), SEIF_COMPONENT_VERSION );
 	wp_register_style( 'seif-list-style', $css . 'widgets-core/list' . $rtl . '.css', array( 'seif-base', 'seif-fontawesome', 'seif-architecture-icons', 'seif-common-icons' ), SEIF_COMPONENT_VERSION );
+	wp_register_style( 'seif-iconbox-style', $css . 'widgets-core/icon-box' . $rtl . '.css', array( 'seif-base', 'seif-fontawesome', 'seif-architecture-icons', 'seif-common-icons' ), SEIF_COMPONENT_VERSION );
 
 	// Libraries the theme loaded globally.
 	wp_register_script( 'seif-swiper', $js . 'plugins/swiper/swiper.min.js', array(), SEIF_COMPONENT_VERSION, true );
@@ -86,9 +87,11 @@ add_action( 'elementor/widgets/register', function ( $widgets_manager ) {
 	}
 	require_once SEIF_COMPONENT_PATH . 'widgets-core/funfact-counter/widget.php';
 	require_once SEIF_COMPONENT_PATH . 'widgets-core/list/widget.php';
+	require_once SEIF_COMPONENT_PATH . 'widgets-core/icon-box/widget.php';
 	$widgets_manager->register( new \SeifComponent\Widgets\ServiceBlock\TM_Elementor_ServiceBlock() );
 	$widgets_manager->register( new \SeifComponent\Widgets\TM_Elementor_Funfact_Counter() );
 	$widgets_manager->register( new \SeifComponent\Widgets\TM_Elementor_List() );
+	$widgets_manager->register( new \SeifComponent\Widgets\TM_Elementor_Iconbox() );
 } );
 
 // Same library settings as the original theme: icon-list.js holds full class names, so no prefix.

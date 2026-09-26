@@ -1,6 +1,6 @@
 # SeifHub UI Elements
 
-Standalone Elementor plugin by **SeifHub** with **Services Block**, **Funfact Counter**, and **Lists** in the **SeifHub UI Elements** category.
+Standalone Elementor plugin by **SeifHub** with **Services Block**, **Funfact Counter**, **Lists**, and **Icon Box** in the **SeifHub UI Elements** category.
 
 ## Requirements
 
@@ -12,6 +12,6 @@ The Interiox theme and Mascot Core plugin are not required. This plugin includes
 
 ## Install
 
-Upload `seifhub-elementor-components.zip` through **Plugins → Add New → Upload Plugin**, activate it, and add the widgets in Elementor. The widget IDs are `seif-service-block`, `seif-funfact-counter`, and `seif-lists`.
+Upload `seifhub-elementor-components.zip` through **Plugins → Add New → Upload Plugin**, activate it, and add the widgets in Elementor. The widget IDs are `seif-service-block`, `seif-funfact-counter`, `seif-lists`, and `seif-iconbox`.
 
 The Seif widgets are separate from the original Interiox widget IDs. Pages already using the original widgets need to be rebuilt with the Seif widgets before removing Mascot Core.

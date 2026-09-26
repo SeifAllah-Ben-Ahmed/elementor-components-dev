@@ -2,6 +2,18 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /** Plugin-local copies of source widget control and rendering helpers. */
 
+function seif_component_get_animation_type() {
+	return array(
+		'' => esc_html__( 'None', 'seifhub-elementor-components' ),
+		'tm-animation-floating' => esc_html__( 'Floating Animation', 'seifhub-elementor-components' ),
+		'tm-animation-slide-horizontal' => esc_html__( 'Horizontal Slide Animation', 'seifhub-elementor-components' ),
+		'tm-animation-flicker' => esc_html__( 'Flicker Animation', 'seifhub-elementor-components' ),
+		'tm-animation-spin' => esc_html__( 'Spin Animation', 'seifhub-elementor-components' ),
+		'tm-animation-random-animation1' => esc_html__( 'Random Animation 1', 'seifhub-elementor-components' ),
+		'tm-animation-random-animation2' => esc_html__( 'Random Animation 2', 'seifhub-elementor-components' ),
+	);
+}
+
 function seif_component_animate_css_animation_list() {
 		$animate_css_animation_list = array(
 			'' => '',
@@ -2312,4 +2324,3 @@ function seif_component_theme_color_list() {
 		);
 		return $theme_color_list;
 	}
-
